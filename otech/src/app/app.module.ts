@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TitleComponent } from './components/templates/title/title.component';
+import { FormComponent } from './components/templates/form/form.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TitleComponent
+    TitleComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
