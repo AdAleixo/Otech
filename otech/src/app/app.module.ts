@@ -9,12 +9,14 @@ import { TitleComponent } from './components/templates/title/title.component';
 import { FormComponent } from './components/templates/form/form.component';
 import {CepService} from '../model/cep/cep.service';
 import { FormsModule} from "@angular/forms";
+import { FooterComponent } from './components/templates/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
-    FormComponent
+    FormComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
