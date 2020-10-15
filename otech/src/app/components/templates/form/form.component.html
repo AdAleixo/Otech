@@ -9,13 +9,13 @@
   </div>
 </div>
 
+ <!-- Trecho de código com formulário com os dados do user-->
 
-
-<div class="row">
-  <div class="col-lg-8 col-md-6 col-sm-3 col-form">
-    <form class="form-dados">
-      <div class="row">
-        <div class="col">
+<div class="row ">
+  <div class="col-lg-8 col-md-6 col-sm-3 col-form border-right border-dark">
+    <form class="form-dados ">
+      <div class="row ">
+        <div class="col ">
           <input type="text" class="form-control" placeholder="Primeiro Nome">
         </div>
         <div class="col">
@@ -31,18 +31,78 @@
           <input type="text" class="form-control" placeholder="Data de Nascimento">
         </div>
       </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+
+            <input class="form-control" placeholder="Email">
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label">Adicionar Acompanhante</label>
+        </div>
+      </div>
+
+      <h3>Dados da Entrega</h3>
+
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+
+            <input class="form-control" placeholder="CEP">
+          </div>
+
+        </div>
+        <div class="form-group">
+
+          <input type="text" class="form-control" id="inputAddress" placeholder="Endereço">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+
+            <select id="inputState" class="form-control">
+              <option selected>País</option>
+              <option>Brasil</option>
+              <option>EUA</option>
+              <option>Portugal</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+
+            <select id="inputState" class="form-control">
+              <option selected>Estado</option>
+              <option>DF</option>
+              <option>RJ</option>
+              <option>SP</option>
+              <option>MG</option>
+              <option>TO</option>
+              <option>PA</option>
+              <option>PI</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+
     </form>
 
-    <div class="form-group">
-
-    <input  class="form-control" placeholder="Email">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
 
-  </div>
+<!-- Trecho do código com informação do ingresso -->
   <div class="col-lg-4 col-md-6 col-sm-3 col-ingresso">
     Seu Ingresso
   </div>

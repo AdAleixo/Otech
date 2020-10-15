@@ -8,11 +8,20 @@
   font-size: 30px;
   background-color: #EEEEEE;
   height: 100px;
+
 }
 
 .form-dados{
 
   padding-top: 15px;
   padding-bottom: 15px;
+  padding-left: 13px;
+
+
+}
+.form-check-label{
+
+
+  padding-bottom: 55px;
 
 }
