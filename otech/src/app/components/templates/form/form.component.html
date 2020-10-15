@@ -1,52 +1,49 @@
 <h1 class="form-title">Formulário</h1>
-<div class="grid-container">
 
-  <div class="grid-item grid-title">Dados Pessoais</div>
-  <div class="grid-item grid-title ">Seu ingresso</div>
+<div class="row">
+  <div class="col-lg-8 col-md-6 col-sm-3 row-title">
+    Dados Pessoais
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-3 row-title">
+    Seu Ingresso
+  </div>
+</div>
 
 
-  <div class="grid-item grid-form">
-    <form class="form-inline">
 
-      <input type="text" placeholder="Primeiro Nome">
-      <input type="text" placeholder="Último Nome">
-
-    </form>
-    <form class="form-inline">
-
-      <input type="text" placeholder="CPF">
-      <input type="text" placeholder="Data de Nascimento">
-
-    </form>
-    <input class="email-input" type="text" placeholder="Email">
-    <br>
+<div class="row">
+  <div class="col-lg-8 col-md-6 col-sm-3 col-form">
+    <form class="form-dados">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Primeiro Nome">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Último Nome">
+        </div>
+      </div>
       <br>
-    <label class="check-acompanhante">
-      <input type="checkbox"> Adicionar Acompanhante
-    </label>
-
-<br>
-<br>
-<br>
-<br>
-
-<h3>Dados da Entrega</h3>
-      <input type="text" placeholder="CEP">
-      <br>
-      <br>
-
-      <input type="text" placeholder="Endereço">
-
-
-    <form class="form-inline">
-
-      <input type="text" placeholder="País">
-      <input type="text" placeholder="Estado">
-
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="CPF">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Data de Nascimento">
+        </div>
+      </div>
     </form>
-    <button class="btn btn-dark">Enviar</button>
+
+    <div class="form-group">
+
+    <input  class="form-control" placeholder="Email">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
 
-  <div class="grid-item">Info Ingresso</div>
-
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-3 col-ingresso">
+    Seu Ingresso
+  </div>
 </div>

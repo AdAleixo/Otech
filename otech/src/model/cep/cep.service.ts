@@ -8,9 +8,9 @@ import {Observable} from 'rxjs';
 })
 export class CepService {
 
-  recuperarEnderecoPorCep(cep:string ):Observable<any[]>{
+  recuperarEnderecoPorCep(cep:string ):Observable<any>{
 
-    return this.http.get<any[]>(`http://viacep.com.br/ws/$cep/json/`)
+    return this.http.get<any>(`https://viacep.com.br/ws/$cep/json/`)
 
 
   }

@@ -1,72 +1,18 @@
 .form-title {
-  font-weight: bold;
-  font-size: 40px;
+  font-size: 45px;
 }
 
-.grid-container {
-
-  display: grid;
-  grid-template-columns: auto auto;
-  padding: 10px;
-}
-
-.grid-item {
-  padding: 20px;
+.row-title {
+  padding-top: 30px;
+  text-align: left;
   font-size: 30px;
+  background-color: #EEEEEE;
+  height: 100px;
 }
 
-.grid-title {
-  padding-bottom: 60px;
-  background-color: #F1F1F1;
-}
+.form-dados{
 
-.form-inline {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
 
-}
-
-.form-inline label {
-  margin: 5px 10px 5px 0;
-}
-
-.form-inline input {
-  vertical-align: middle;
-  margin: 5px 10px 5px 0;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-}
-
-/*button {
-  padding: 10px 20px;
-  background-color: dodgerblue;
-  border: 1px solid #ddd;
-  color: white;
-  cursor: pointer;
-}
-*/
-/*button:hover {
-  background-color: royalblue;
-}
-*/
-@media (max-width: 700px) {
-  .form-inline input {
-    margin: 10px 0;
-  }
-
-  .form-inline {
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-
-.check-acompanhante {
-  font-size: 15px;
-}
-
-.grid-form{
-
-    border-right: 3px solid grey;
 }

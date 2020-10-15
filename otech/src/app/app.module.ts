@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TitleComponent } from './components/templates/title/title.component';
 import { FormComponent } from './components/templates/form/form.component';
 import {CepService} from '../model/cep/cep.service';
+import { FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {CepService} from '../model/cep/cep.service';
     AppRoutingModule,
     MatToolbarModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [CepService],
   bootstrap: [AppComponent]
