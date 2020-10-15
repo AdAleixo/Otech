@@ -9,7 +9,7 @@
   </div>
 </div>
 
- <!-- Trecho de código com formulário com os dados do user-->
+<!-- Trecho de código com formulário com os dados do user-->
 
 <div class="row ">
   <div class="col-lg-8 col-md-6 col-sm-3 col-form border-right border-dark">
@@ -43,11 +43,45 @@
       </div>
       <div class="row">
         <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label">Adicionar Acompanhante</label>
+          <input type="checkbox" class="form-check-input" id="acompCheck" (change)="checked('acompCheck')">
+          <label class="form-check-label ">Adicionar Acompanhante</label>
         </div>
       </div>
 
+
+<!-- Trecho do código para os dados do Acompanhante -->
+      <div *ngIf="shown">
+        <div class="row ">
+          <div class="col ">
+            <input type="text" class="form-control" placeholder="Primeiro Nome">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Último Nome">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="CPF">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Data de Nascimento">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+
+              <input class="form-control" placeholder="Email">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <br>
+      <br>
       <h3>Dados da Entrega</h3>
 
       <form>
@@ -95,14 +129,14 @@
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" id="submit" class="btn btn-primary">Enviar</button>
       </form>
 
     </form>
 
   </div>
 
-<!-- Trecho do código com informação do ingresso -->
+  <!-- Trecho do código com informação do ingresso -->
   <div class="col-lg-4 col-md-6 col-sm-3 col-ingresso">
     Seu Ingresso
   </div>

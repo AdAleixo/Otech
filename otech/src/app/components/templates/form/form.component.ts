@@ -10,11 +10,22 @@ export class FormComponent implements OnInit {
 
   logradouro:string;
   cep:string;
-  constructor(private cepService:CepService) {
+
+  checked(value){
+  if(document.getElementById('acompCheck').checked==true){
+    this.shown= true
+  }
+  else if(document.getElementById('acompCheck').checked==false)
+    this.shown= false;
+}
+  constructor() {
+
+
 
    }
 
   ngOnInit(): void {
+
   }
 recuperarEnderecoPorCep():void {
 
