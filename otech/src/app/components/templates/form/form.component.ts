@@ -18,6 +18,8 @@ export class FormComponent implements OnInit {
   else if(document.getElementById('acompCheck').checked==false)
     this.shown= false;
 }
+
+
   constructor() {
 
 

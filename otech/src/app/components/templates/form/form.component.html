@@ -49,7 +49,7 @@
       </div>
 
 
-<!-- Trecho do código para os dados do Acompanhante -->
+      <!-- Trecho do código para os dados do Acompanhante -->
       <div *ngIf="shown">
         <div class="row ">
           <div class="col ">
@@ -138,6 +138,25 @@
 
   <!-- Trecho do código com informação do ingresso -->
   <div class="col-lg-4 col-md-6 col-sm-3 col-ingresso">
-    Seu Ingresso
+    <div class="row">
+      <div class="col">
+        <img class="ticket" src="assets/images/ticket.jpeg" alt="ticket">
+      </div>
+      <div class="col">
+        Ingresso
+        <br>
+          Filme:
+          <div class="dropdown">
+  <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Escolha o filme
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Filme 1</a>
+    <a class="dropdown-item" href="#">Filme 2</a>
+    <a class="dropdown-item" href="#">Filme 3</a>
+  </div>
+</div>
+      </div>
+    </div>
   </div>
 </div>
