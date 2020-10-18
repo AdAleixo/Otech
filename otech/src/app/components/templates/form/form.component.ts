@@ -12,6 +12,16 @@ export class FormComponent implements OnInit {
 
   public shown: boolean;
   primeiroNome: string;
+  sobrenome: string;
+  cpf:string;
+  dataDeNascimento: string;
+  email:string;
+
+  primeiroNomeAcompanhante: string;
+  sobrenomeAcompanhante:string;
+  cpfAcompanhante:string;
+  emailAcompanhante:string;
+  dataNascimentoAcompanhante:string;
   
   public cep: string;
   public logradouro: string;

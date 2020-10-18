@@ -16,47 +16,108 @@
             [(ngModel)]="primeiroNome"
             required
             #nomeInput="ngModel"
-            required
-            type="text"
             name="nomeInput"
             type="text"
             class="form-control"
             placeholder="Primeiro Nome"
           />
           <span
-          class="text-danger"
-          *ngIf="
-            (nomeInput.touched || formulario.submitted) &&
-            nomeInput.errors?.required
-          "
-        >
-          Campo obrigatório!
-        </span>
+            class="text-danger"
+            *ngIf="
+              (nomeInput.touched || formulario.submitted) &&
+              nomeInput.errors?.required
+            "
+          >
+            Campo obrigatório!
+          </span>
         </div>
-        
-       
+
         <div class="col">
-          <input type="text" class="form-control" placeholder="Último Nome" />
+          <input
+            [(ngModel)]="sobrenome"
+            required
+            #sobreNomeInput="ngModel"
+            type="text"
+            name="sobreNomeInput"
+            class="form-control"
+            placeholder="Último Nome"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              (sobreNomeInput.touched || formulario.submitted) &&
+              sobreNomeInput.errors?.required
+            "
+          >
+            Campo obrigatório!
+          </span>
         </div>
       </div>
       <br />
       <div class="row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="CPF" />
+          <input
+            [(ngModel)]="cpf"
+            required
+            #cpfInput="ngModel"
+            name="cpf"
+            type="text"
+            class="form-control"
+            placeholder="CPF"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              (cpfInput.touched || formulario.submitted) &&
+              cpfInput.errors?.required
+            "
+          >
+            Campo obrigatório!
+          </span>
         </div>
         <div class="col">
           <input
+            [(ngModel)]="dataDeNascimento"
+            #dataDeNascimentoInput="ngModel"
+            name="dataDeNascimento"
+            required
             type="text"
             class="form-control"
             placeholder="Data de Nascimento"
           />
+          <span
+            class="text-danger"
+            *ngIf="
+              (dataDeNascimentoInput.touched || formulario.submitted) &&
+              dataDeNascimentoInput.errors?.required
+            "
+          >
+            Campo obrigatório!
+          </span>
         </div>
       </div>
       <br />
       <div class="row">
         <div class="col">
           <div class="form-group">
-            <input class="form-control" placeholder="Email" />
+            <input
+              [(ngModel)]="email"
+              required
+              #emailInput="ngModel"
+              name="email"
+              type="text"
+              class="form-control"
+              placeholder="Email"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                (emailInput.touched || formulario.submitted) &&
+                emailInput.errors?.required
+              "
+            >
+              Campo obrigatório!
+            </span>
           </div>
         </div>
       </div>
@@ -78,33 +139,112 @@
         <div class="row">
           <div class="col">
             <input
-              type="text"
+              [(ngModel)]="primeiroNomeAcompanhante"
+              required
+              #primeiroNomeAcompanhanteInput="ngModel"
+              name="primeiroNomeAcompanhante"
               class="form-control"
+              type="text"
               placeholder="Primeiro Nome"
             />
+            <span
+              class="text-danger"
+              *ngIf="
+                (primeiroNomeAcompanhanteInput.touched ||
+                  formulario.submitted) &&
+                primeiroNomeAcompanhanteInput.errors?.required
+              "
+            >
+              Campo obrigatório!
+            </span>
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Último Nome" />
+            <input
+              [(ngModel)]="sobrenomeAcompanhante"
+              required
+              #sobrenomeAcompanhanteInput="ngModel"
+              name="sobrenomeAcompanhante"
+              class="form-control"
+              type="text"
+              class="form-control"
+              placeholder="Último Nome"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                (sobrenomeAcompanhanteInput.touched || formulario.submitted) &&
+                sobrenomeAcompanhanteInput.errors?.required
+              "
+            >
+              Campo obrigatório!
+            </span>
           </div>
         </div>
         <br />
         <div class="row">
           <div class="col">
-            <input type="text" class="form-control" placeholder="CPF" />
+            <input
+              [(ngModel)]="cpfAcompanhante"
+              required
+              #cpfAcompanhanteInput="ngModel"
+              name="cpfAcompanhante"
+              class="form-control"
+              type="text"
+              
+              placeholder="CPF"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                (cpfAcompanhanteInput.touched || formulario.submitted) &&
+                cpfAcompanhanteInput.errors?.required
+              "
+            >
+              Campo obrigatório!
+            </span>
           </div>
           <div class="col">
             <input
+              [(ngModel)]="dataNascimentoAcompanhante"
+              required
+              #dataNascimentoAcompanhanteInput="ngModel"
+              name="dataNascimentoAcompanhante"
               type="text"
               class="form-control"
               placeholder="Data de Nascimento"
+              
             />
+            <span
+              class="text-danger"
+              *ngIf="
+                (dataNascimentoAcompanhanteInput.touched || formulario.submitted) &&
+                dataNascimentoAcompanhanteInput.errors?.required
+              "
+            >
+              Campo obrigatório!
+            </span>
           </div>
         </div>
         <br />
         <div class="row">
           <div class="col">
             <div class="form-group">
-              <input class="form-control" placeholder="Email" />
+              <input 
+              [(ngModel)]="emailAcompanhante"
+              required
+              #emailAcompanhanteInput="ngModel"
+              name="emailAcompanhante"
+              type="text"
+              class="form-control" placeholder="Email" />
+              <span
+              class="text-danger"
+              *ngIf="
+                (emailAcompanhanteInput.touched || formulario.submitted) &&
+                emailAcompanhanteInput.errors?.required
+              "
+            >
+              Campo obrigatório!
+            </span>
             </div>
           </div>
         </div>
