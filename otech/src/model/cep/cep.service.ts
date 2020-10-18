@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { BehaviorSubject, Observable, throwError } from "rxjs";
+import { map, retry, catchError } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -8,13 +9,15 @@ import {Observable} from 'rxjs';
 })
 export class CepService {
 
-  recuperarEnderecoPorCep(cep:string ):Observable<any>{
-
-    return this.http.get<any>(`https://viacep.com.br/ws/$cep/json/`)
-
-
+  recuperarEnderecoPorCep(cep){
+      return this.http.get<any>(`https://viacep.com.br/ws/${cep}/json/` ).pipe(
+        map((result) => {  
+          return result;
+        }),
+      );
   }
-  constructor(private http:HttpClient) {
+  
 
-  }
+  constructor(private http:HttpClient) {} 
+
 }

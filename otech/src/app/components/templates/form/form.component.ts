@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CepService } from 'src/model/cep/cep.service';
+import { first } from "rxjs/operators";
+
 
 @Component({
   selector: 'app-form',
@@ -8,29 +10,47 @@ import { CepService } from 'src/model/cep/cep.service';
 })
 export class FormComponent implements OnInit {
 
-  logradouro: string;
-  cep: string;
+  public shown: boolean;
+  
+  public cep: string;
+  public logradouro: string;
+  public localidade: string;
+  public pais: string;
 
-  checked(value) {
-    if (document.getElementById('acompCheck').checked == true) {
-      this.shown = true
-    }
-    else if (document.getElementById('acompCheck').checked == false)
-      this.shown = false;
+  public estadosOptions = [
+    { id: '  ', name: "Selecione" },
+    { id: 'DF', name: "Distrito Federal" },
+    { id: 'RJ', name: "Rio de Janeiro" },
+    { id: 'SP', name: "São Paulo" },
+    { id: 'MG', name: "Minas Gerais" },
+  ];
+
+  checked() {
+    this.shown = !this.shown;
   }
 
-
-  constructor() {
-
-  }
+  constructor(private cepService : CepService ) {}
 
   ngOnInit(): void {
 
   }
-  recuperarEnderecoPorCep(): void {
 
-    this.cepService.recuperarEnderecoPorCep(this.cep).subscribe(resposta => {
-      this.logradouro = resposta.logradouro;
-    });
+  recuperarEnderecoPorCep() {
+
+    this.cepService
+    .recuperarEnderecoPorCep( this.cep )
+    .pipe(first())
+    .subscribe(
+        (result) => {
+          console.log( result )
+
+          this.logradouro = result.logradouro;
+          this.localidade = result.localidade;
+          this.pais = 'Brasil';
+
+        }
+    )
+   
   }
+
 }
