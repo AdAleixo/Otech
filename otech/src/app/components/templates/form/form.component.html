@@ -190,7 +190,6 @@
               name="cpfAcompanhante"
               class="form-control"
               type="text"
-              
               placeholder="CPF"
             />
             <span
@@ -212,12 +211,12 @@
               type="text"
               class="form-control"
               placeholder="Data de Nascimento"
-              
             />
             <span
               class="text-danger"
               *ngIf="
-                (dataNascimentoAcompanhanteInput.touched || formulario.submitted) &&
+                (dataNascimentoAcompanhanteInput.touched ||
+                  formulario.submitted) &&
                 dataNascimentoAcompanhanteInput.errors?.required
               "
             >
@@ -229,22 +228,24 @@
         <div class="row">
           <div class="col">
             <div class="form-group">
-              <input 
-              [(ngModel)]="emailAcompanhante"
-              required
-              #emailAcompanhanteInput="ngModel"
-              name="emailAcompanhante"
-              type="text"
-              class="form-control" placeholder="Email" />
+              <input
+                [(ngModel)]="emailAcompanhante"
+                required
+                #emailAcompanhanteInput="ngModel"
+                name="emailAcompanhante"
+                type="text"
+                class="form-control"
+                placeholder="Email"
+              />
               <span
-              class="text-danger"
-              *ngIf="
-                (emailAcompanhanteInput.touched || formulario.submitted) &&
-                emailAcompanhanteInput.errors?.required
-              "
-            >
-              Campo obrigatório!
-            </span>
+                class="text-danger"
+                *ngIf="
+                  (emailAcompanhanteInput.touched || formulario.submitted) &&
+                  emailAcompanhanteInput.errors?.required
+                "
+              >
+                Campo obrigatório!
+              </span>
             </div>
           </div>
         </div>
@@ -326,59 +327,19 @@
   <div class="col-lg-4 col-md-6 col-sm-3 col-ingresso">
     <div class="row">
       <div class="col">
-        <img class="ticket" src="assets/images/ticket.jpeg" alt="ticket" />
+        Selecione um filme para compra de ingresso:
+        <select >
+          <option *ngFor="let movie of moviesOptions" value="{{ movie.id }}">
+            {{ movie.title }}
+          </option>
+        </select>
       </div>
-      <div class="col">
-        Ingresso
-        <br />
-        Filme:
-        <div class="dropdown">
-          <button
-            class="btn btn-sm btn-secondary dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Escolha o filme
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Filme 1</a>
-            <a class="dropdown-item" href="#">Filme 2</a>
-            <a class="dropdown-item" href="#">Filme 3</a>
-          </div>
-        </div>
-      </div>
-    </div>
+      <hr />
 
-    <hr />
-
-    <div class="row">
-      <div class="col">
-        <p>Sub-total</p>
-      </div>
-      <div class="col">
-        <p>R$20,00</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <p>Frete</p>
-      </div>
-      <div class="col">
-        <p>R$ 10,00</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <p>Total</p>
-      </div>
-      <div class="col">R$30,00</div>
+      
     </div>
   </div>
+  
+  <br />
+  <hr />
 </div>
-<br />
-<hr />

@@ -1,6 +1,8 @@
+import { MovieService } from './../../../../model/movie/movie.service';
 import { Component, OnInit } from '@angular/core';
 import { CepService } from 'src/model/cep/cep.service';
 import { first } from "rxjs/operators";
+import { Movie } from 'src/model/movie/movie';
 
 
 @Component({
@@ -36,13 +38,19 @@ export class FormComponent implements OnInit {
     { id: 'MG', name: "Minas Gerais" },
   ];
 
+  moviesOptions: Movie[] = [];
+
   checked() {
     this.shown = !this.shown;
   }
 
-  constructor(private cepService : CepService ) {}
+  constructor(private cepService : CepService , private movieService : MovieService) {}
 
   ngOnInit(): void {
+
+      this.movieService.recuperarFilmes().subscribe(response=>{
+          this.moviesOptions = response.results;
+    });
 
   }
 
