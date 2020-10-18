@@ -1,0 +1,18 @@
+<form #formulario="ngForm">
+  <input
+    [(ngModel)]="nome"
+    required
+    #nomeInput="ngModel"
+    required
+    type="text"
+    (change)="validar()"
+    name="nomeInput"
+  />
+  <span
+    class="text-danger"
+    *ngIf="(nomeInput.touched || formulario.submitted) && nomeInput.errors?.required"
+  >
+    Primeiro nome é obrigatório!
+  </span>
+</form>
+

@@ -10,13 +10,15 @@ import { FormComponent } from './components/templates/form/form.component';
 import {CepService} from '../model/cep/cep.service';
 import { FormsModule} from "@angular/forms";
 import { FooterComponent } from './components/templates/footer/footer.component';
+import { FormValidateComponent } from './form-validate/form-validate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
     FormComponent,
-    FooterComponent
+    FooterComponent,
+    FormValidateComponent
   ],
   imports: [
     BrowserModule,

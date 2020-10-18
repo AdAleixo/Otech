@@ -11,6 +11,7 @@ import { first } from "rxjs/operators";
 export class FormComponent implements OnInit {
 
   public shown: boolean;
+  primeiroNome: string;
   
   public cep: string;
   public logradouro: string;
