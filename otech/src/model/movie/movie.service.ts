@@ -13,6 +13,6 @@ export class MovieService {
 
   recuperarFilmes():Observable<MoviesResponse>{
 
-    return this.http.get<MoviesResponse>(environment.urlMovies+ "/movie/upcoming?api_key=2a51a139f755eeacb9cb94abce302abb&language=en-US&page=1");
+    return this.http.get<MoviesResponse>("https://api.themoviedb.org/3/movie/upcoming?api_key=2a51a139f755eeacb9cb94abce302abb&language=en-US&page=1");
   }
 }
