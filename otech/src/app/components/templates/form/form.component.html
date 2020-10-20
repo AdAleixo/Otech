@@ -362,16 +362,29 @@
     <div class="row">
       <div class="col">
         Selecione um filme para compra de ingresso:
-        <select name="filme" [(ngModel)]="filmeSelecionado">
-          <option>Selecione um Filme</option>
-          <option *ngFor="let movie of moviesOptions" [value]="movie.title">
+        <select (change)="selecionado()" name="filme" [(ngModel)]="filmeSelecionado">
+          
+          <option  *ngFor="let movie of moviesOptions" [value]="movie.title">
             {{ movie.title }}
           </option>
         </select>
       </div>
     </div>
+
+    <hr>
+    <br>
+    <div *ngIf="mostrar">
+      <h4>Sub total:      R$20,00<br></h4>
+      <h4>Frete:          R$:10,00<br></h4>
+      <h3>Total:          R$ 30,00<br></h3>
+      
+      
+    </div>
   </div>
+
+  
 
   <br />
   <hr />
 </div>
+<hr>

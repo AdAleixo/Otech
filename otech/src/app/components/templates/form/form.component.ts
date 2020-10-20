@@ -14,6 +14,7 @@ import {Form} from './../../../../model/form/form';
 export class FormComponent implements OnInit {
 
   public shown: boolean;
+  mostrar:boolean=false;
   primeiroNome: string;
   sobrenome: string;
   cpf:string;
@@ -48,6 +49,11 @@ export class FormComponent implements OnInit {
 
   checked() {
     this.shown = !this.shown;
+  }
+
+  selecionado(){
+    
+    this.mostrar=true;
   }
 
   constructor(private cepService : CepService , private movieService : MovieService , 
