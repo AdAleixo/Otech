@@ -260,17 +260,30 @@
             <label for="inputCity">CEP</label>
             <input
               class="form-control"
+              #cepInput="ngModel"
               placeholder="CEP"
               [(ngModel)]="cep"
+              required
               name="cep"
+              type="text"
               (change)="recuperarEnderecoPorCep()"
             />
+            <span
+                class="text-danger"
+                *ngIf="
+                  (cepInput.touched || formulario.submitted) &&
+                  cepInput.errors?.required
+                "
+              >
+                Campo obrigatório!
+              </span>
           </div>
         </div>
         <div class="form-group">
           <label for="inputCity">Endereço</label>
           <input
             type="text"
+            required
             class="form-control"
             id="inputAddress"
             [(ngModel)]="logradouro"
@@ -293,7 +306,12 @@
           </div>
           <div class="form-group col-md-4">
             <label for="inputCity">Estado</label>
-            <select class="form-control col-md-4">
+            <select
+              [(ngModel)] = "estado"
+              #estadoInput="ngModel"
+              required
+              name="estado"
+             class="form-control col-md-4">
               <option
                 *ngFor="let estado of estadosOptions"
                 value="{{ estado.id }}"
@@ -301,6 +319,15 @@
                 {{ estado.name }}
               </option>
             </select>
+            <span
+            class="text-danger"
+            *ngIf="
+              
+              estadoInput.errors?.required
+            "
+          >
+            Campo obrigatório!
+          </span>
           </div>
         </div>
         <div class="form-row">
@@ -317,16 +344,19 @@
         </div>
 
         <button *ngIf="
-        (!nomeInput.touched || !formulario.submitted) &&
+        ((!nomeInput.touched || !formulario.submitted) &&
         !nomeInput.errors?.required && (!sobreNomeInput.touched || !formulario.submitted) &&
         !sobreNomeInput.errors?.required && (!cpfInput.touched || !formulario.submitted) &&
         !cpfInput.errors?.required && (!dataDeNascimentoInput.touched || !formulario.submitted) &&
         !dataDeNascimentoInput.errors?.required && (!emailInput.touched || !formulario.submitted) &&
-        !emailInput.errors?.required"
+        !emailInput.errors?.required) && (!cepInput.touched || !formulario.submitted) &&
+        !cepInput.errors?.required"
+        
+        
       
               
             
-      type="submit" id="submit" class="btn btn-primary">
+      type="submit" (click)=enviarForm() id="submit" class="btn btn-primary">
           Enviar
         </button>
       </form>
@@ -338,9 +368,9 @@
     <div class="row">
       <div class="col">
         Selecione um filme para compra de ingresso:
-        <select >
+        <select name="filme" [(ngModel)]="filmeSelecionado">
           <option>Selecione um Filme</option>
-          <option *ngFor="let movie of moviesOptions" value="{{ movie.id }}">
+          <option *ngFor="let movie of moviesOptions" [value]="movie.title">
             {{ movie.title }}
             
           </option>

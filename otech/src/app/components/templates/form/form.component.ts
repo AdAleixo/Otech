@@ -1,9 +1,10 @@
+import { FormService } from './../../../../model/form/form.service';
 import { MovieService } from './../../../../model/movie/movie.service';
 import { Component, OnInit } from '@angular/core';
 import { CepService } from 'src/model/cep/cep.service';
 import { first } from "rxjs/operators";
 import { Movie } from 'src/model/movie/movie';
-
+import {Form} from './../../../../model/form/form';
 
 @Component({
   selector: 'app-form',
@@ -24,19 +25,24 @@ export class FormComponent implements OnInit {
   cpfAcompanhante:string;
   emailAcompanhante:string;
   dataNascimentoAcompanhante:string;
+  filmeSelecionado: string;
   
   public cep: string;
   public logradouro: string;
   public localidade: string;
   public pais: string;
+  public estado: string;
 
   public estadosOptions = [
-    { id: '  ', name: "Selecione" },
+    
     { id: 'DF', name: "Distrito Federal" },
     { id: 'RJ', name: "Rio de Janeiro" },
     { id: 'SP', name: "São Paulo" },
     { id: 'MG', name: "Minas Gerais" },
   ];
+
+  
+
 
   moviesOptions: Movie[] = [];
 
@@ -44,7 +50,8 @@ export class FormComponent implements OnInit {
     this.shown = !this.shown;
   }
 
-  constructor(private cepService : CepService , private movieService : MovieService) {}
+  constructor(private cepService : CepService , private movieService : MovieService , 
+    private formService : FormService) {}
 
   ngOnInit(): void {
 
@@ -70,6 +77,29 @@ export class FormComponent implements OnInit {
         }
     )
    
+  }
+
+  enviarForm(){
+
+    this.formService.enviarForm({
+
+
+      primeiro_nome: this.primeiroNome,
+      sobrenome: this.sobrenome,
+      cpf:this.cpf,
+      data_nascimento:this.dataDeNascimento,
+      email:this.email,
+      primeiro_nome_acompanhante: this.primeiroNomeAcompanhante,
+      sobrenome_acompanhante:this.sobrenomeAcompanhante,
+      cpf_acompanhante:this.cpfAcompanhante,
+      data_nascimento_acompanhante:this.dataNascimentoAcompanhante,
+      email_acompanhante:this.emailAcompanhante,
+      nome_filme:this.filmeSelecionado
+
+
+
+    })
+    
   }
 
 }
