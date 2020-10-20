@@ -94,7 +94,11 @@ export class FormComponent implements OnInit {
       cpf_acompanhante:this.cpfAcompanhante,
       data_nascimento_acompanhante:this.dataNascimentoAcompanhante,
       email_acompanhante:this.emailAcompanhante,
-      nome_filme:this.filmeSelecionado
+      nome_filme:this.filmeSelecionado,
+      cep:this.cep,
+      endereco:this.logradouro,
+      pais:this.pais,
+      city:this.localidade
 
 
 

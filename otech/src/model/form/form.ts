@@ -15,4 +15,9 @@ export class Form{
     email_acompanhante:string;
     nome_filme:string;
 
+    cep:string;
+    endereco:string;
+    pais:string;
+    city:string;
+
 }
