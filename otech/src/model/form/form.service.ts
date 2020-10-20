@@ -1,24 +1,19 @@
-import { Form } from './form';
-
+import { Form } from "./form";
 
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "./../../environments/environment";
 
-
-
 @Injectable({
   providedIn: "root",
 })
 export class FormService {
   constructor(private http: HttpClient) {}
-  enviarForm(form : Form): Observable<Form> {
-
+  enviarForm(form: Form): Observable<Form> {
     console.log(form);
-    return this.http.post<Form>(
-      "http://localhost/reserva", form ,{headers : {"authorization": "#ASDFGW#ERWQERTRYT#%$%$@#$%=="}}
-      
-    );
+    return this.http.post<Form>("http://localhost/reserva", form, {
+      headers: { authorization: "#ASDFGW#ERWQERTRYT#%$%$@#$%==" },
+    });
   }
 }

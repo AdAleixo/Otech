@@ -6,7 +6,7 @@
   padding-top: 30px;
   text-align: left;
   font-size: 30px;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   height: 100px;
 }
 
@@ -20,12 +20,11 @@
   padding-bottom: 55px;
 }
 
-.ticket{
-
+.ticket {
   width: 70%;
   padding: 30px;
 }
 
-hr{
+hr {
   padding: 15px;
 }
