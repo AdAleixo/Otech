@@ -15,7 +15,7 @@ export class FormService {
   constructor(private http: HttpClient) {}
   enviarForm(form : Form): Observable<Form> {
 
-    
+    console.log(form);
     return this.http.post<Form>(
       "http://localhost/reserva", form ,{headers : {"authorization": "#ASDFGW#ERWQERTRYT#%$%$@#$%=="}}
       
